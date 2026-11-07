@@ -1,0 +1,23 @@
+{
+  "short_name": "GD SubZero",
+  "name": "Geometry Dash SubZero",
+  "icons": [
+    {
+      "src": "https://play-lh.googleusercontent.com/TU7evnDya31k2v4vcWrMhBmcNUd4e1-egTqfZ3ELv_xZrvsvL2BxZj7RVnbhVvcaYXpE-TOXWDE4iI2vcDKZ8A=w240-h480-rw",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://play-lh.googleusercontent.com/TU7evnDya31k2v4vcWrMhBmcNUd4e1-egTqfZ3ELv_xZrvsvL2BxZj7RVnbhVvcaYXpE-TOXWDE4iI2vcDKZ8A=w240-h480-rw",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#16181e",
+  "theme_color": "#16181e",
+  "display": "fullscreen",
+  "orientation": "landscape"
+}
