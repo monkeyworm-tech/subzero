@@ -1,76 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Geometry Dash SubZero</title>
-    <meta charset="utf-8" />
-    <meta name="robots" content="noindex, nofollow, noodp, noydir" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
-    <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true,IE=Edge,chrome=1" />
-    <meta http-equiv="Content-Language" content="en-US" />
-    
-    <!-- PWA / Web App Manifest & Theme Settings -->
-    <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#16181e" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="GD SubZero" />
-    <link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/TU7evnDya31k2v4vcWrMhBmcNUd4e1-egTqfZ3ELv_xZrvsvL2BxZj7RVnbhVvcaYXpE-TOXWDE4iI2vcDKZ8A=w240-h480-rw" />
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+    <title>Geometry Dash SubZero</title>     
+    <meta charset="utf-8" />     
+    <meta name="robots" content="noindex, nofollow, noodp, noydir" />     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />     
+    <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true,IE=Edge,chrome=1" />     
+    <meta http-equiv="Content-Language" content="en-US" />          <!-- PWA / Web App Manifest & Theme Settings -->     
+    <link rel="manifest" href="manifest.json" />     
+    <meta name="theme-color" content="#16181e" />     
+    <meta name="apple-mobile-web-app-capable" content="yes" />     
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />     
+    <meta name="apple-mobile-web-app-title" content="GD SubZero" />     
+    <link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/TU7evnDya31k2v4vcWrMhBmcNUd4e1-egTqfZ3ELv_xZrvsvL2BxZj7RVnbhVvcaYXpE-TOXWDE4iI2vcDKZ8A=w240-h480-rw" />     
+    <style>         
+        * {             
+            margin: 0;             
+            padding: 0;             
+            box-sizing: border-box;             
+            font-family: Helvetica, Arial, Roboto, sans-serif;         
+        }         
+        html, body {             
+            width: 100%;             
+            height: 100%;             
+            background-color: #000;             
+            overflow: hidden;         
+        }         
+        .iframe-default {             
+            width: 100%;             
+            height: 100%;             
+            border: none;             
+            display: block;         
+        }     
+    </style> 
+</head> 
+<body id="run_IFRAME_HTML">     
+    <script>         
+        let url_game = "https://lolygames.github.io/gd-zubero/";         
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Helvetica, Arial, Roboto, sans-serif;
-        }
+        function start_game_frame() {             
+            let frame_game = document.createElement('iframe');             
+            frame_game.setAttribute('id', 'iframehtml5');             
+            frame_game.setAttribute('width', '100%');             
+            frame_game.setAttribute('height', '100%');             
+            frame_game.setAttribute('frameborder', '0');             
+            frame_game.setAttribute('border', '0');             
+            frame_game.setAttribute('scrolling', 'no');             
+            frame_game.setAttribute('class', 'iframe-default');             
+            frame_game.setAttribute('allowfullscreen', 'true');             
+            frame_game.setAttribute('allow', 'storage-access; autoplay; gamepad');
+            frame_game.setAttribute('src', url_game);             
+            frame_game.setAttribute('title', "Geometry Dash SubZero");             
+            frame_game.setAttribute('sandbox', 'allow-forms allow-modals allow-same-origin allow-scripts allow-pointer-lock');                          
+            document.body.append(frame_game);             
+            frame_game.focus();         }         
 
-        html, body {
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            overflow: hidden;
-        }
-
-        .iframe-default {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-    </style>
-</head>
-<body id="run_IFRAME_HTML">
-    <script>
-        let url_game = "https://lolygames.github.io/gd-zubero/";
-
-        function start_game_frame() {
-            let frame_game = document.createElement('iframe');
-            frame_game.setAttribute('id', 'iframehtml5');
-            frame_game.setAttribute('width', '100%');
-            frame_game.setAttribute('height', '100%');
-            frame_game.setAttribute('frameborder', '0');
-            frame_game.setAttribute('border', '0');
-            frame_game.setAttribute('scrolling', 'no');
-            frame_game.setAttribute('class', 'iframe-default');
-            frame_game.setAttribute('allowfullscreen', 'true');
-            frame_game.setAttribute('src', url_game);
-            frame_game.setAttribute('title', "Geometry Dash SubZero");
-            frame_game.setAttribute('sandbox', 'allow-forms allow-modals allow-same-origin allow-scripts allow-pointer-lock');
-            
-            document.body.append(frame_game);
-            frame_game.focus();
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            start_game_frame();
-            
-            // Register Service Worker for PWA
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('Service Worker registered:', reg.scope))
-                    .catch(err => console.error('Service Worker registration failed:', err));
-            }
-        });
-    </script>
-</body>
+        window.addEventListener('DOMContentLoaded', () => {             
+            start_game_frame();                          
+            // Register Service Worker for PWA             
+            if ('serviceWorker' in navigator) {                 
+                navigator.serviceWorker.register('./sw.js')                     
+                    .then(reg => console.log('Service Worker registered:', reg.scope))                     
+                    .catch(err => console.error('Service Worker registration failed:', err));             
+            }         });     
+    </script> 
+</body> 
 </html>
